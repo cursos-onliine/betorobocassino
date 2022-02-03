@@ -1,1 +1,982 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+	<meta charset="UTF-8">
+		<title>Beto &#8211; CS</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="CS &raquo; Feed" href="https://construindosucesso.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="CS &raquo; Feed de comentários" href="https://construindosucesso.com/comments/feed/" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.3.1 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-WFD8SCSDJ6"  data-cfasync="false" data-wpfc-render="false" async></script>
+			<script data-cfasync="false" data-wpfc-render="false">
+				var mi_version = '8.3.1';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+										'ga-disable-G-WFD8SCSDJ6',
+														];
 
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+															parameters.send_to = monsterinsights_frontend.v4_id;
+								var hookName = name;
+								if ( typeof parameters[ 'event_category' ] !== 'undefined' ) {
+									hookName = parameters[ 'event_category' ] + ':' + name;
+								}
+
+								if ( typeof MonsterInsightsDualTracker.trackers[ hookName ] !== 'undefined' ) {
+									MonsterInsightsDualTracker.trackers[ hookName ]( parameters );
+								} else {
+									__gtagDataLayer( 'event', name, parameters );
+								}
+							
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+										__gtagTracker( 'config', 'G-WFD8SCSDJ6', {"forceSSL":"true","link_attribution":"true"} );
+															window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/construindosucesso.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='http://construindosucesso.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9' media='all' />
+<style id='wp-block-library-theme-inline-css'>
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-code>code{font-family:Menlo,Consolas,monaco,monospace;color:#1e1e1e;padding:.8em 1em;border:1px solid #ddd;border-radius:4px}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-group:where(.has-background){padding:1.25em 2.375em}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto;opacity:.4}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{padding:.5em;border:1px solid;word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}
+</style>
+<link rel='stylesheet' id='activecampaign-form-block-css'  href='http://construindosucesso.com/wp-content/plugins/activecampaign-subscription-forms/activecampaign-form-block/build/style-index.css?ver=1642252221' media='all' />
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFFFFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--dark-gray: #28303D;--wp--preset--color--gray: #39414D;--wp--preset--color--green: #D1E4DD;--wp--preset--color--blue: #D1DFE4;--wp--preset--color--purple: #D1D1E4;--wp--preset--color--red: #E4D1D1;--wp--preset--color--orange: #E4DAD1;--wp--preset--color--yellow: #EEEADD;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--purple-to-yellow: linear-gradient(160deg, #D1D1E4 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-purple: linear-gradient(160deg, #EEEADD 0%, #D1D1E4 100%);--wp--preset--gradient--green-to-yellow: linear-gradient(160deg, #D1E4DD 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-green: linear-gradient(160deg, #EEEADD 0%, #D1E4DD 100%);--wp--preset--gradient--red-to-yellow: linear-gradient(160deg, #E4D1D1 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-red: linear-gradient(160deg, #EEEADD 0%, #E4D1D1 100%);--wp--preset--gradient--purple-to-red: linear-gradient(160deg, #D1D1E4 0%, #E4D1D1 100%);--wp--preset--gradient--red-to-purple: linear-gradient(160deg, #E4D1D1 0%, #D1D1E4 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 18px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 24px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--extra-small: 16px;--wp--preset--font-size--normal: 20px;--wp--preset--font-size--extra-large: 40px;--wp--preset--font-size--huge: 96px;--wp--preset--font-size--gigantic: 144px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-dark-gray-color{color: var(--wp--preset--color--dark-gray) !important;}.has-gray-color{color: var(--wp--preset--color--gray) !important;}.has-green-color{color: var(--wp--preset--color--green) !important;}.has-blue-color{color: var(--wp--preset--color--blue) !important;}.has-purple-color{color: var(--wp--preset--color--purple) !important;}.has-red-color{color: var(--wp--preset--color--red) !important;}.has-orange-color{color: var(--wp--preset--color--orange) !important;}.has-yellow-color{color: var(--wp--preset--color--yellow) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-dark-gray-background-color{background-color: var(--wp--preset--color--dark-gray) !important;}.has-gray-background-color{background-color: var(--wp--preset--color--gray) !important;}.has-green-background-color{background-color: var(--wp--preset--color--green) !important;}.has-blue-background-color{background-color: var(--wp--preset--color--blue) !important;}.has-purple-background-color{background-color: var(--wp--preset--color--purple) !important;}.has-red-background-color{background-color: var(--wp--preset--color--red) !important;}.has-orange-background-color{background-color: var(--wp--preset--color--orange) !important;}.has-yellow-background-color{background-color: var(--wp--preset--color--yellow) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-dark-gray-border-color{border-color: var(--wp--preset--color--dark-gray) !important;}.has-gray-border-color{border-color: var(--wp--preset--color--gray) !important;}.has-green-border-color{border-color: var(--wp--preset--color--green) !important;}.has-blue-border-color{border-color: var(--wp--preset--color--blue) !important;}.has-purple-border-color{border-color: var(--wp--preset--color--purple) !important;}.has-red-border-color{border-color: var(--wp--preset--color--red) !important;}.has-orange-border-color{border-color: var(--wp--preset--color--orange) !important;}.has-yellow-border-color{border-color: var(--wp--preset--color--yellow) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-purple-to-yellow-gradient-background{background: var(--wp--preset--gradient--purple-to-yellow) !important;}.has-yellow-to-purple-gradient-background{background: var(--wp--preset--gradient--yellow-to-purple) !important;}.has-green-to-yellow-gradient-background{background: var(--wp--preset--gradient--green-to-yellow) !important;}.has-yellow-to-green-gradient-background{background: var(--wp--preset--gradient--yellow-to-green) !important;}.has-red-to-yellow-gradient-background{background: var(--wp--preset--gradient--red-to-yellow) !important;}.has-yellow-to-red-gradient-background{background: var(--wp--preset--gradient--yellow-to-red) !important;}.has-purple-to-red-gradient-background{background: var(--wp--preset--gradient--purple-to-red) !important;}.has-red-to-purple-gradient-background{background: var(--wp--preset--gradient--red-to-purple) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-extra-small-font-size{font-size: var(--wp--preset--font-size--extra-small) !important;}.has-normal-font-size{font-size: var(--wp--preset--font-size--normal) !important;}.has-extra-large-font-size{font-size: var(--wp--preset--font-size--extra-large) !important;}.has-huge-font-size{font-size: var(--wp--preset--font-size--huge) !important;}.has-gigantic-font-size{font-size: var(--wp--preset--font-size--gigantic) !important;}
+</style>
+<link rel='stylesheet' id='twenty-twenty-one-style-css'  href='http://construindosucesso.com/wp-content/themes/twentytwentyone/style.css?ver=1.1' media='all' />
+<link rel='stylesheet' id='twenty-twenty-one-print-style-css'  href='http://construindosucesso.com/wp-content/themes/twentytwentyone/assets/css/print.css?ver=1.1' media='print' />
+<link rel='stylesheet' id='elementor-icons-css'  href='http://construindosucesso.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.13.0' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css'  href='http://construindosucesso.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.5.3' media='all' />
+<link rel='stylesheet' id='elementor-post-7-css'  href='http://construindosucesso.com/wp-content/uploads/elementor/css/post-7.css?ver=1643074971' media='all' />
+<link rel='stylesheet' id='elementor-pro-css'  href='http://construindosucesso.com/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.5.2' media='all' />
+<link rel='stylesheet' id='elementor-global-css'  href='http://construindosucesso.com/wp-content/uploads/elementor/css/global.css?ver=1643082739' media='all' />
+<link rel='stylesheet' id='elementor-post-851-css'  href='http://construindosucesso.com/wp-content/uploads/elementor/css/post-851.css?ver=1643851409' media='all' />
+<link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.9' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css'  href='http://construindosucesso.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-solid-css'  href='http://construindosucesso.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3' media='all' />
+<script id='monsterinsights-frontend-script-js-extra'>
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/construindosucesso.com","hash_tracking":"false","ua":"","v4_id":"G-WFD8SCSDJ6"};
+</script>
+<script src='http://construindosucesso.com/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.3.1' id='monsterinsights-frontend-script-js'></script>
+<link rel="https://api.w.org/" href="https://construindosucesso.com/wp-json/" /><link rel="alternate" type="application/json" href="https://construindosucesso.com/wp-json/wp/v2/pages/851" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://construindosucesso.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://construindosucesso.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9" />
+<link rel="canonical" href="https://construindosucesso.com/beto/" />
+<link rel='shortlink' href='https://construindosucesso.com/?p=851' />
+<link rel="alternate" type="application/json+oembed" href="https://construindosucesso.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fconstruindosucesso.com%2Fbeto%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://construindosucesso.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fconstruindosucesso.com%2Fbeto%2F&#038;format=xml" />
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '454480856332214');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=454480856332214&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://construindosucesso.com/wp-content/uploads/2021/03/cropped-favicon-laranja-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://construindosucesso.com/wp-content/uploads/2021/03/cropped-favicon-laranja-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://construindosucesso.com/wp-content/uploads/2021/03/cropped-favicon-laranja-180x180.png" />
+<meta name="msapplication-TileImage" content="https://construindosucesso.com/wp-content/uploads/2021/03/cropped-favicon-laranja-270x270.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
+<body class="page-template page-template-elementor_canvas page page-id-851 wp-embed-responsive is-light-theme no-js singular elementor-default elementor-template-canvas elementor-kit-7 elementor-page elementor-page-851">
+			<div data-elementor-type="wp-post" data-elementor-id="851" class="elementor elementor-851" data-elementor-settings="[]">
+							<div class="elementor-section-wrap">
+							<section class="elementor-section elementor-top-section elementor-element elementor-element-52a07ae8 sobrepor elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="52a07ae8" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-67f4f505" data-id="67f4f505" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-4add29b9 elementor-widget elementor-widget-html" data-id="4add29b9" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '454480856332214');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=454480856332214&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->		</div>
+				</div>
+				<div class="elementor-element elementor-element-11b246d elementor-headline--style-highlight elementor-widget elementor-widget-animated-headline" data-id="11b246d" data-element_type="widget" data-settings="{&quot;highlighted_text&quot;:&quot;&lt;span style=\&quot;color: #00FFCF;\&quot;&gt;RENDA MENSAL &lt;\/span&gt; &quot;,&quot;highlight_iteration_delay&quot;:2000,&quot;headline_style&quot;:&quot;highlight&quot;,&quot;marker&quot;:&quot;circle&quot;,&quot;loop&quot;:&quot;yes&quot;,&quot;highlight_animation_duration&quot;:1200}" data-widget_type="animated-headline.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-headline">
+					<span class="elementor-headline-plain-text elementor-headline-text-wrapper">CONQUISTE UMA</span>
+				<span class="elementor-headline-dynamic-wrapper elementor-headline-text-wrapper">
+					<span class="elementor-headline-dynamic-text elementor-headline-text-active"><span style="color: #00FFCF;">RENDA MENSAL </span> </span>
+				</span>
+					<span class="elementor-headline-plain-text elementor-headline-text-wrapper">COM ROBÔS NA INTERNET</span>
+					</h3>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1df4bc9 e-transform elementor-aspect-ratio-169 elementor-widget elementor-widget-video" data-id="1df4bc9" data-element_type="widget" data-settings="{&quot;video_type&quot;:&quot;vimeo&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;play_on_mobile&quot;:&quot;yes&quot;,&quot;start&quot;:0,&quot;_animation&quot;:&quot;none&quot;,&quot;aspect_ratio&quot;:&quot;169&quot;,&quot;_transform_rotateZ_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_rotateZ_effect_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="video.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-wrapper elementor-fit-aspect-ratio elementor-open-inline">
+			<iframe class="elementor-video-iframe" allowfullscreen title="Reprodutor de vídeo de vimeo" src="https://player.vimeo.com/video/663153020?autoplay=1&amp;playsinline=1&amp;color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=0&amp;portrait=0&amp;byline=0#t="></iframe>		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-f7018a1 elementor-widget elementor-widget-heading" data-id="f7018a1" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">SEUS RESULTADOS NO MUNDO DAS APOSTAS ONLINE ESTÃO PRESTES A COMEÇAR!</h3>		</div>
+				</div>
+				<div class="elementor-element elementor-element-9b64826 elementor-align-center elementor-invisible elementor-widget elementor-widget-button" data-id="9b64826" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:0}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#oferta" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-pulse-grow" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">QUERO APRENDER</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-68d3395 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="68d3395" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-894c2e3" data-id="894c2e3" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-4099837 elementor-widget elementor-widget-heading" data-id="4099837" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">Você está preparado para obter um renda extra na internet?</h3>		</div>
+				</div>
+				<div class="elementor-element elementor-element-902d625 elementor-widget elementor-widget-heading" data-id="902d625" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Você sabia que Jogos Online e Tecnologia estão cada vez mais unidos e formando centenas de Milionários diariamente no Brasil?</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-4dc0a4e elementor-widget elementor-widget-heading" data-id="4dc0a4e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Robôs que ajudam seres humanos a faturar muita grana na internet. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-756b1c2 elementor-widget elementor-widget-heading" data-id="756b1c2" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Você já percebeu que o setor de Jogos On Line está tomando conta no mundo todo? 
+<br>Muitas pessoas com 18, 19, 20 anos de idade conquistando seu primeiro milhão utilizando robôs jogadores. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-2230409 elementor-widget elementor-widget-heading" data-id="2230409" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Agora imagine  um robô 🤖 que acessa o banco de dados da Bet365 e monitora todas as Roletas do Cassino ON LINE em tempo real. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-8e9993e elementor-headline--style-highlight elementor-widget elementor-widget-animated-headline" data-id="8e9993e" data-element_type="widget" data-settings="{&quot;marker&quot;:&quot;double_underline&quot;,&quot;highlighted_text&quot;:&quot;BETO&quot;,&quot;highlight_iteration_delay&quot;:2000,&quot;headline_style&quot;:&quot;highlight&quot;,&quot;loop&quot;:&quot;yes&quot;,&quot;highlight_animation_duration&quot;:1200}" data-widget_type="animated-headline.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-headline">
+					<span class="elementor-headline-plain-text elementor-headline-text-wrapper">Esse ROBÔ existe e nome dele é </span>
+				<span class="elementor-headline-dynamic-wrapper elementor-headline-text-wrapper">
+					<span class="elementor-headline-dynamic-text elementor-headline-text-active">BETO</span>
+				</span>
+					<span class="elementor-headline-plain-text elementor-headline-text-wrapper">!</span>
+					</h3>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-e680eb2 elementor-widget elementor-widget-heading" data-id="e680eb2" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">BETO identifica os padrões, repetições e tendências de forma simultânea em todas as roletas.  </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-80ae269 elementor-widget elementor-widget-heading" data-id="80ae269" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">BETO encontra um padrão e envia uma mensagem instantânea no canal VIP do Telegram. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-e2fdbb9 elementor-widget elementor-widget-heading" data-id="e2fdbb9" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Tudo que você precisa fazer é seguir a recomendação do robô 🤖. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-0245fb6 elementor-widget elementor-widget-heading" data-id="0245fb6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Vc receberá as jogadas prontas com 98% de assertividade. 
+
+Ele irá indicar qual jogada você deve fazer na Roleta, vc apenas irá escolher o valor da aposta, que por sinal tem LUCRO de 100%. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-8783a30 elementor-widget elementor-widget-heading" data-id="8783a30" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Se você aposta 50,00 reais, volta 100,00 reais. 
+A cada 100 entradas o robô acerta 97 😱 </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-6d263b9 elementor-align-center elementor-invisible elementor-widget elementor-widget-button" data-id="6d263b9" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:0}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#oferta" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-pulse-grow" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">quero começar</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-750ee8a9 ocultar elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="750ee8a9" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;triangle&quot;,&quot;shape_divider_bottom_negative&quot;:&quot;yes&quot;}">
+					<div class="elementor-shape elementor-shape-bottom" data-negative="true">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+	<path class="elementor-shape-fill" d="M500.2,94.7L0,0v100h1000V0L500.2,94.7z"/>
+</svg>		</div>
+					<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1a29743d" data-id="1a29743d" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-6a41bd12 elementor-widget elementor-widget-heading" data-id="6a41bd12" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Veja você mesmo nos relatos abaixo </h2>		</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-23ad96f7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="23ad96f7" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-42c4499a elementor-invisible" data-id="42c4499a" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomIn&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-2b67628d elementor-widget elementor-widget-image" data-id="2b67628d" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="575" height="1024" src="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4914-575x1024.jpg" class="attachment-large size-large" alt="" loading="lazy" srcset="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4914-575x1024.jpg 575w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4914-168x300.jpg 168w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4914-768x1368.jpg 768w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4914-862x1536.jpg 862w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4914-1150x2048.jpg 1150w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4914.jpg 1284w" sizes="(max-width: 575px) 100vw, 575px" style="width:100%;height:178.12%;max-width:1284px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-72766304 elementor-invisible" data-id="72766304" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomIn&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-7e09a9a1 elementor-widget elementor-widget-image" data-id="7e09a9a1" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="578" height="1024" src="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5250-578x1024.jpg" class="attachment-large size-large" alt="" loading="lazy" srcset="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5250-578x1024.jpg 578w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5250-169x300.jpg 169w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5250-768x1361.jpg 768w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5250-867x1536.jpg 867w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5250-1156x2048.jpg 1156w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5250.jpg 1284w" sizes="(max-width: 578px) 100vw, 578px" style="width:100%;height:177.18%;max-width:1284px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-4d9e7d9 elementor-invisible" data-id="4d9e7d9" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomIn&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-8bbad14 elementor-widget elementor-widget-image" data-id="8bbad14" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="576" height="1024" src="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4912-576x1024.jpg" class="attachment-large size-large" alt="" loading="lazy" srcset="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4912-576x1024.jpg 576w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4912-169x300.jpg 169w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4912-768x1366.jpg 768w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4912-864x1536.jpg 864w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4912-1152x2048.jpg 1152w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4912.jpg 1284w" sizes="(max-width: 576px) 100vw, 576px" style="width:100%;height:177.8%;max-width:1284px" />															</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-0965560 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0965560" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-2455ab4 elementor-invisible" data-id="2455ab4" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomIn&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-10d3ce7 elementor-widget elementor-widget-image" data-id="10d3ce7" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="473" height="1024" src="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5007-473x1024.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5007-473x1024.png 473w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5007-139x300.png 139w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5007-768x1662.png 768w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5007-710x1536.png 710w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5007-947x2048.png 947w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5007.png 1284w" sizes="(max-width: 473px) 100vw, 473px" style="width:100%;height:216.36%;max-width:1284px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-79c25a9 elementor-invisible" data-id="79c25a9" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomIn&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-203b769 elementor-widget elementor-widget-image" data-id="203b769" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="473" height="1024" src="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5003-473x1024.png" class="attachment-large size-large" alt="" loading="lazy" srcset="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5003-473x1024.png 473w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5003-139x300.png 139w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5003-768x1662.png 768w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5003-710x1536.png 710w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5003-947x2048.png 947w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5003.png 1284w" sizes="(max-width: 473px) 100vw, 473px" style="width:100%;height:216.36%;max-width:1284px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-c9e8592 elementor-invisible" data-id="c9e8592" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomIn&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-08a287b elementor-widget elementor-widget-image" data-id="08a287b" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="474" height="1024" src="https://construindosucesso.com/wp-content/uploads/2022/01/9a7cdbc0-d5ce-44f9-addd-cf43cbc0decb-474x1024.jpg" class="attachment-large size-large" alt="" loading="lazy" srcset="https://construindosucesso.com/wp-content/uploads/2022/01/9a7cdbc0-d5ce-44f9-addd-cf43cbc0decb-474x1024.jpg 474w, https://construindosucesso.com/wp-content/uploads/2022/01/9a7cdbc0-d5ce-44f9-addd-cf43cbc0decb-139x300.jpg 139w, https://construindosucesso.com/wp-content/uploads/2022/01/9a7cdbc0-d5ce-44f9-addd-cf43cbc0decb-710x1536.jpg 710w, https://construindosucesso.com/wp-content/uploads/2022/01/9a7cdbc0-d5ce-44f9-addd-cf43cbc0decb.jpg 740w" sizes="(max-width: 474px) 100vw, 474px" style="width:100%;height:216.22%;max-width:740px" />															</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<div class="elementor-element elementor-element-596aca2 elementor-align-center elementor-invisible elementor-widget elementor-widget-button" data-id="596aca2" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:0}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#oferta" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-pulse-grow" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">quero lucrar igual eles</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-a0709f1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="a0709f1" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1c78a3b" data-id="1c78a3b" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-7775fa70 elementor-widget elementor-widget-heading" data-id="7775fa70" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Vc deve estar imaginando que se tudo isso for verdade a casa de aposta não vai suportar! </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-300dae2 elementor-widget elementor-widget-heading" data-id="300dae2" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Primeiro é válido lembrar que a Bet365 é a maior casa de aposta do Mundo com 69 Milhões de usuários que se divertem apostando em futebol, corrida de cavalo, corrida de fórmula1 e com isso a casa Lucra bilhões diariamente.</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-9cffc86 elementor-widget elementor-widget-heading" data-id="9cffc86" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Por enquanto o BETO não faz diferença, mas isso pode mudar, aliás o mundo muda a todo tempo. 
+
+Por isso a oportunidade é agora! </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-ec68dda elementor-widget elementor-widget-heading" data-id="ec68dda" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Um grupo de pessoas ainda pequeno está usando o robô diariamente e chegam a receber 200 sinais por dia! </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7648f36 elementor-widget elementor-widget-heading" data-id="7648f36" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Usando apenas 20 sinais com entrada de R$20,00 vc pode fazer R$400,00 por dia. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3e601ef elementor-widget elementor-widget-heading" data-id="3e601ef" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Usando nosso método de gerenciamento e acompanhamento no grupo vip, você vai usar 20 minutos do seu dia para fazer operações.</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-50f04f6 elementor-widget elementor-widget-heading" data-id="50f04f6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">É simples, prático e rápido e até um analfabeto digital consegue ganhar dinheiro com o BETO. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-2e287dc elementor-widget elementor-widget-heading" data-id="2e287dc" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">A instalação do Beto é feita no seu Telegram de forma automática, rápida e vc só precisa ter internet. 
+
+Após conectar o Beto no seu celular vc começa a lucrar no mesmo dia. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3b93a1d elementor-widget elementor-widget-heading" data-id="3b93a1d" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Junto com o robô 🤖, vc leva uma Plataforma exclusiva com dezenas de módulos em vídeo para estudar todas estratégias do cassino e manual de gerenciamento da sua banca. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-1c8e458 elementor-widget elementor-widget-heading" data-id="1c8e458" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Vc ainda terá mentoria com Shel Guima e fará operações ao Vivo no Cassino!</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-37c59aa elementor-align-center elementor-invisible elementor-widget elementor-widget-button" data-id="37c59aa" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:0}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#oferta" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-pulse-grow" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">eu quero agora!</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-04b5d9b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="04b5d9b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;none&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f54fa3a" data-id="f54fa3a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-70333e2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible" data-id="70333e2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomIn&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-d6e5106" data-id="d6e5106" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-d720296 elementor-widget elementor-widget-image" data-id="d720296" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="750" height="496" src="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4921-1024x677.jpg" class="attachment-large size-large" alt="" loading="lazy" srcset="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4921-1024x677.jpg 1024w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4921-300x198.jpg 300w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4921-768x508.jpg 768w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_4921.jpg 1284w" sizes="(max-width: 750px) 100vw, 750px" style="width:100%;height:66.12%;max-width:1284px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-d11d9f6" data-id="d11d9f6" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-3235c06 elementor-widget elementor-widget-text-editor" data-id="3235c06" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>Quem é Shel guima?</p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-09151c6 elementor-widget elementor-widget-heading" data-id="09151c6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Shel Guima é um empreendedor em multimercados e já faturou acima de 10 Milhões com internet. Fundador da agência GM12 DIGITAL se profissionalizou no cassino, criou o BETO e somente operando com o robô ele é um dos pouquíssimos jogadores que abre relatório de ganhos e perdas ao vivo e faz de 1.000 a 2.000 reais por dia com consistência. </h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-7ab67fe elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7ab67fe" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0809bbb" data-id="0809bbb" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-4733384 elementor-widget elementor-widget-heading" data-id="4733384" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">E tem mais...</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-0127272 elementor-widget elementor-widget-heading" data-id="0127272" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">- Atendimento exclusivo para integrantes do Canal VIP <br>
+
+- LIVE de mentoria ( Duas vezes no mês ) <br> 
+
+- Grupo VIP ( interações, perguntas e respostas, dicas)<br> 
+
+- Curso ( Digital Money, 15 módulos com estratégias e método de gerenciamento) </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-c4ecfc5 elementor-widget elementor-widget-heading" data-id="c4ecfc5" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Sem enrolação, queremos entregar a melhor experiência da sua vida em tecnologia, sabemos do potencial que esse produto tem de transformar vidas. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-bd2512f elementor-widget elementor-widget-heading" data-id="bd2512f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Você pode se juntar a nós e ser pioneiro nessa revolução dos jogos on-line. Vamos formar os novos milionários do setor e você pode ser um deles. </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-4e028e6 elementor-align-center elementor-invisible elementor-widget elementor-widget-button" data-id="4e028e6" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:0}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#oferta" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-pulse-grow" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">eu quero agora!</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-d367bf2 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d367bf2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f5d2304" data-id="f5d2304" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-f704ca4 elementor-view-default elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="f704ca4" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-box-wrapper">
+						<div class="elementor-icon-box-icon">
+				<span class="elementor-icon elementor-animation-" >
+				<i aria-hidden="true" class="fas fa-lock"></i>				</span>
+			</div>
+						<div class="elementor-icon-box-content">
+				<h3 class="elementor-icon-box-title">
+					<span  >
+						OPERE COM SEGURANÇA					</span>
+				</h3>
+									<p class="elementor-icon-box-description">
+						CHEGA DE PERDER DINHEIRO FAZENDO APOSTAS SEM ESTRATÉGIAS.					</p>
+							</div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-2fe08b85 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2fe08b85" data-element_type="section" id="oferta" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-952bbb4" data-id="952bbb4" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-41a5003 elementor-widget elementor-widget-heading" data-id="41a5003" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Não use a sorte, agora você tem um robô 🤖 com 97% de assertividade</h2>		</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-400f2cd4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="400f2cd4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-634cd7e8" data-id="634cd7e8" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-31d208f elementor-widget elementor-widget-text-editor" data-id="31d208f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+													</div>
+				</div>
+				<div class="elementor-element elementor-element-c0f51e5 elementor-widget elementor-widget-image" data-id="c0f51e5" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="750" height="422" src="https://construindosucesso.com/wp-content/uploads/2022/01/Beto-new-1024x576.jpeg" class="attachment-large size-large" alt="" loading="lazy" srcset="https://construindosucesso.com/wp-content/uploads/2022/01/Beto-new-1024x576.jpeg 1024w, https://construindosucesso.com/wp-content/uploads/2022/01/Beto-new-300x169.jpeg 300w, https://construindosucesso.com/wp-content/uploads/2022/01/Beto-new-768x432.jpeg 768w, https://construindosucesso.com/wp-content/uploads/2022/01/Beto-new.jpeg 1280w" sizes="(max-width: 750px) 100vw, 750px" style="width:100%;height:56.25%;max-width:1280px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1d12b042" data-id="1d12b042" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-7fb73cfd elementor-widget elementor-widget-text-editor" data-id="7fb73cfd" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>promoção de lançamento</p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-1eaae7dd elementor-widget elementor-widget-text-editor" data-id="1eaae7dd" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p class="p1">Plataforma DIGITAL MONEY/ curso (297,00)<span class="Apple-converted-space"> </span></p><p class="p1">Grupo VIP + Sala de Sinais (1.068 anual)<span class="Apple-converted-space"> </span></p><p class="p1">TOTAL = 1.365,00</p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-22b4f489 elementor-widget elementor-widget-text-editor" data-id="22b4f489" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p><b>de <del>R$ 1.365,00</del></b></p><p><b><del><br /></del></b><b>por 12x de</b></p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-1c2f813 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="1c2f813" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">R$</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7460208f elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="7460208f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><strong><strong><b>24,70</b> </strong></strong></h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-47da72fb elementor-widget elementor-widget-text-editor" data-id="47da72fb" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>OU APENAS r$247,00 Á VISTA.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<div class="elementor-element elementor-element-5164dff elementor-widget elementor-widget-heading" data-id="5164dff" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">ADQUIRA AGORA O robô com a maior taxa de assertividade do mercado!</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-4c046458 elementor-align-center elementor-widget elementor-widget-button" data-id="4c046458" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;,&quot;_animation_mobile&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:0}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="https://sun.eduzz.com/1262574?a=95891811" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-pulse" role="button" id="bt_pulse">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">Quero aproveitar o desconto!</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-5b9d186 elementor-widget elementor-widget-counter" data-id="5b9d186" data-element_type="widget" data-widget_type="counter.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-counter">
+			<div class="elementor-counter-number-wrapper">
+				<span class="elementor-counter-number-prefix"></span>
+				<span class="elementor-counter-number" data-duration="2000" data-to-value="459" data-from-value="0" data-delimiter=",">0</span>
+				<span class="elementor-counter-number-suffix"></span>
+			</div>
+							<div class="elementor-counter-title">pessoas adquiriram o BETO hoje</div>
+					</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-0fd0919 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0fd0919" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-920852c" data-id="920852c" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<section class="elementor-section elementor-inner-section elementor-element elementor-element-7bbb44d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7bbb44d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-efd9b02" data-id="efd9b02" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-cfb5a2b elementor-widget elementor-widget-image" data-id="cfb5a2b" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img src="https://construindosucesso.com/wp-content/uploads/elementor/thumbs/garantia-7-dias-pim8hwmqt2e5skibj3no97aseywrc0cmw2bgoz99ok.png" title="garantia-7-dias" alt="garantia-7-dias" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-b4560d2" data-id="b4560d2" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-56ce3ac elementor-widget elementor-widget-heading" data-id="56ce3ac" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">GARANTIA INCONDICIONAL</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-d1cfff8 elementor-widget elementor-widget-text-editor" data-id="d1cfff8" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>Eu sei que mesmo depois do que te mostramos aqui, você pode ainda estar inseguro(a). Mas o BETO vai facilitar a sua vida. Se em 7 dias você seguir as estratégias e verificar que o produto não gerou o resultado que apresentamos nessa página, você poderá pedir o seu reembolso sem nenhuma burocracia, portanto seu risco é zero!</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<div class="elementor-element elementor-element-4f70e43 elementor-align-center elementor-invisible elementor-widget elementor-widget-button" data-id="4f70e43" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:0}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="https://sun.eduzz.com/1121986?a=95891811" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-pulse-grow" role="button" id="#oferta">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">eu quero!</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-57df1a30 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="57df1a30" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3c12025" data-id="3c12025" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-7e71c54 elementor-widget elementor-widget-heading" data-id="7e71c54" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h4 class="elementor-heading-title elementor-size-default">PERGUNTAS E RESPOSTAS</h4>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7f872f03 elementor-widget elementor-widget-heading" data-id="7f872f03" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h5 class="elementor-heading-title elementor-size-default">Tire todas as suas dúvidas</h5>		</div>
+				</div>
+				<div class="elementor-element elementor-element-173ef275 elementor-widget elementor-widget-toggle" data-id="173ef275" data-element_type="widget" data-widget_type="toggle.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-toggle" role="tablist">
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-3901" class="elementor-tab-title" data-tab="1" role="tab" aria-controls="elementor-tab-content-3901" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="" class="elementor-toggle-title">Nunca joguei online, esse curso é para mim?</a>
+					</div>
+
+					<div id="elementor-tab-content-3901" class="elementor-tab-content elementor-clearfix" data-tab="1" role="tabpanel" aria-labelledby="elementor-tab-title-3901"><p>Sim, com certeza! O BETO foi desenvolvido com o objetivo de ajudar qualquer pessoa, mesmo quem é completamente leigo no assunto e até mesmo quem já é mais avançado!</p><p>Dentro do curso, você encontrará todo o passo a passo, bem detalhado para operar de forma prática e rápida.</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-3902" class="elementor-tab-title" data-tab="2" role="tab" aria-controls="elementor-tab-content-3902" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="" class="elementor-toggle-title">Como vou ter acesso ao produto?</a>
+					</div>
+
+					<div id="elementor-tab-content-3902" class="elementor-tab-content elementor-clearfix" data-tab="2" role="tabpanel" aria-labelledby="elementor-tab-title-3902"><p>Assim que você realizar a compra, vai receber em seu email o acesso a plataforma com o conteúdo completo e todas as instruções para utilizar o produto.</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-3903" class="elementor-tab-title" data-tab="3" role="tab" aria-controls="elementor-tab-content-3903" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="" class="elementor-toggle-title">Quais as formas de pagamento?</a>
+					</div>
+
+					<div id="elementor-tab-content-3903" class="elementor-tab-content elementor-clearfix" data-tab="3" role="tabpanel" aria-labelledby="elementor-tab-title-3903"><p>PIX, débito, boleto e cartão de crédito.&nbsp;</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-3904" class="elementor-tab-title" data-tab="4" role="tab" aria-controls="elementor-tab-content-3904" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a href="" class="elementor-toggle-title">O que é a EDUZZ? É uma plataforma confiável para comprar?</a>
+					</div>
+
+					<div id="elementor-tab-content-3904" class="elementor-tab-content elementor-clearfix" data-tab="4" role="tabpanel" aria-labelledby="elementor-tab-title-3904"><p>A EDUZZ é uma plataforma de vendas online de produtos digitais. Esta é uma empresa grande e consolidada no mercado digital e possui uma infraestrutura segura e certificada com os mais altos protocolos de segurança pra processar as transações. Então, você pode fornecer os seus dados pessoais e financeiros sem receio.</p></div>
+				</div>
+								</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-9a0de26 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9a0de26" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1a65f5a" data-id="1a65f5a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-c9ac1c9 elementor-widget elementor-widget-heading" data-id="c9ac1c9" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Ainda ficou com dúvidas?</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-b22314c elementor-widget elementor-widget-heading" data-id="b22314c" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Clica no botão abaixo:</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-cdf3904 elementor-invisible elementor-widget elementor-widget-image" data-id="cdf3904" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://api.whatsapp.com/send?phone=5512983067890&#038;text=Ol%C3%A1,%20Gostaria%20de%20tirar%20duvidas%20sobre%20o%20BETO!">
+							<img width="300" height="105" src="https://construindosucesso.com/wp-content/uploads/2022/01/whatsapp-botão-1024x360-1-300x105-1.png" class="attachment-large size-large" alt="" loading="lazy" style="width:100%;height:35%;max-width:300px" />								</a>
+															</div>
+				</div>
+				<div class="elementor-element elementor-element-cdfce4b elementor-widget elementor-widget-heading" data-id="cdfce4b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Seus dados e informações estão sob absoluto sigilo e segurança. Nunca te enviaremos spam ou mensagens indesejadas.
+</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-70a6d328 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="70a6d328" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6db4d02e" data-id="6db4d02e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-455e6916 elementor-widget elementor-widget-image" data-id="455e6916" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img src="https://construindosucesso.com/wp-content/uploads/2022/01/Beto-new.jpeg" title="Beto new" alt="Beto new" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-50bb7a65" data-id="50bb7a65" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-51b27ab1 elementor-widget elementor-widget-heading" data-id="51b27ab1" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><b>FORMAS DE PAGAMENTO</b></h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-38072bcc elementor-widget elementor-widget-image" data-id="38072bcc" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="300" height="35" src="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5046-300x35.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5046-300x35.jpg 300w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5046-768x89.jpg 768w, https://construindosucesso.com/wp-content/uploads/2022/01/IMG_5046.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" style="width:100%;height:11.52%;max-width:1024px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-5fc95ddb" data-id="5fc95ddb" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-d7908fc elementor-widget elementor-widget-heading" data-id="d7908fc" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><b>SITE 100% SEGURO</b></h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7d82e90b elementor-widget elementor-widget-image" data-id="7d82e90b" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="273" height="93" src="https://construindosucesso.com/wp-content/uploads/2021/03/seguro.png" class="attachment-medium size-medium" alt="" loading="lazy" style="width:100%;height:34.07%;max-width:273px" />															</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-44ca4379 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="44ca4379" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5869a54a" data-id="5869a54a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-25998778 elementor-widget elementor-widget-text-editor" data-id="25998778" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p style="line-height: var(--wp--typography--line-height, --global--line-height-body); font-family: Poppins, sans-serif; text-align: center;">ESTE SITE NÃO É do FACEBOOK: Este site não faz parte do site do Facebook ou do Facebook Inc. Além disso, este site NÃO é endossado pelo Facebook de nenhuma maneira. FACEBOOK é uma marca comercial independente da FACEBOOK, Inc.<br />Todas as estratégias e investimentos envolvem risco de perda. Nenhuma informação contida neste produto deve ser interpretada como uma garantia de resultados.<br />Esse é um conteúdo educacional, não é um recomendação de investimento. Não nos responsabilizamos por perdas financeiras ou prejuízos no mercado de apostas.<br />Padrões, histórico e análise de retornos passados não garantem rentabilidade futura.</p><p style="line-height: var(--wp--typography--line-height, --global--line-height-body); font-family: Poppins, sans-serif; text-align: center;">Seja consciente e assuma os riscos desse mercado.</p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-6913a414 elementor-widget elementor-widget-text-editor" data-id="6913a414" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>© Copyright 2021  – Beto</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+						</div>
+					</div>
+		<script>document.body.classList.remove("no-js");</script>	<script>
+	if ( -1 !== navigator.userAgent.indexOf( 'MSIE' ) || -1 !== navigator.appVersion.indexOf( 'Trident/' ) ) {
+		document.body.classList.add( 'is-IE' );
+	}
+	</script>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><link rel='stylesheet' id='e-animations-css'  href='http://construindosucesso.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.5.3' media='all' />
+<script id='site_tracking-js-extra'>
+var php_data = {"ac_settings":{"tracking_actid":27364590,"site_tracking_default":1,"site_tracking":1},"user_email":""};
+</script>
+<script src='http://construindosucesso.com/wp-content/plugins/activecampaign-subscription-forms/site_tracking.js?ver=5.9' id='site_tracking-js'></script>
+<script id='twenty-twenty-one-ie11-polyfills-js-after'>
+( Element.prototype.matches && Element.prototype.closest && window.NodeList && NodeList.prototype.forEach ) || document.write( '<script src="http://construindosucesso.com/wp-content/themes/twentytwentyone/assets/js/polyfills.js?ver=1.1"></scr' + 'ipt>' );
+</script>
+<script src='http://construindosucesso.com/wp-content/themes/twentytwentyone/assets/js/responsive-embeds.js?ver=1.1' id='twenty-twenty-one-responsive-embeds-script-js'></script>
+<script src='http://construindosucesso.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script src='http://construindosucesso.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js?ver=0.2.1' id='jquery-numerator-js'></script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.5.2' id='elementor-pro-webpack-runtime-js'></script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.5.3' id='elementor-webpack-runtime-js'></script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.5.3' id='elementor-frontend-modules-js'></script>
+<script id='elementor-pro-frontend-js-before'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/construindosucesso.com\/wp-admin\/admin-ajax.php","nonce":"d7122de2c0","urls":{"assets":"http:\/\/construindosucesso.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/construindosucesso.com\/wp-json\/"},"i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"pt_PT","app_id":""},"lottie":{"defaultAnimationUrl":"http:\/\/construindosucesso.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.5.2' id='elementor-pro-frontend-js'></script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2' id='elementor-waypoints-js'></script>
+<script src='http://construindosucesso.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.0' id='jquery-ui-core-js'></script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6' id='swiper-js'></script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.5.3' id='share-link-js'></script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.0' id='elementor-dialog-js'></script>
+<script id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Partilhar no Facebook","shareOnTwitter":"Partilhar no Twitter","pinIt":"Fix\u00e1-lo","download":"Download","downloadImage":"Descarregar Imagem","fullscreen":"\u00c9cr\u00e3 Inteiro","zoom":"Zoom","share":"Partilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Seguinte","close":"Fechar"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Port\u00e1til","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.5.3","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"a11y_improvements":true,"e_import_export":true,"e_hidden_wordpress_widgets":true,"theme_builder_v2":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true,"form-submissions":true},"urls":{"assets":"http:\/\/construindosucesso.com\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":851,"title":"Beto%20%E2%80%93%20CS","excerpt":"","featuredImage":false}};
+</script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.5.3' id='elementor-frontend-js'></script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.5.2' id='pro-preloaded-elements-handlers-js'></script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.5.3' id='preloaded-modules-js'></script>
+<script src='http://construindosucesso.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.5.2' id='e-sticky-js'></script>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",(function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())}),!1);
+	</script>
+		</body>
+</html>
